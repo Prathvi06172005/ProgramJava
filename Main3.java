@@ -1,29 +1,19 @@
-    class Main3{
-    public static void main(String[] args){
-        
-        int n=3874;
-        int real=n;
-        int min=9;
-        int sum=0;
-        while(n>0)
+public class Main3 {
+    static void sum(int[] n,int l){
+        if(l<0)
         {
-            int mod=n%10;
-            if(mod<min)
-            {
-                min=mod;
-            }
-            n=n/10;
+            return;
         }
-        String str=" ";
-        while(real>0)
-        {
-            int mod1=real%10;
-            sum=min+mod1;
-            str=str+sum;
-            real=real/10;
-        }
-         System.out.print(str);
-        
+        System.out.println(n[l]);
+        sum(n,--l);
     }
+    public static void main(String[]args)
+    {
+        int[] arr={2,5,6,7,8,9};
+        sum(arr,arr.length-1);
+        
+        
+
+    }
+    
 }
-   
